@@ -5,7 +5,7 @@ A simulation of real-time log files collection system, and make a statistic on t
 * This project is a Spark Streaming test program, so the main environment of the Spark-Core is the version of [ spark-1.6.2-bin-hadoop2.6](http://d3kbcqa49mib13.cloudfront.net/spark-1.6.2-bin-hadoop2.6.tgz).
 * The scala version the Spark-Core depends on is the `2.10.4`.
 * The HDFS is provided by the `2.7.1` version of the `Hadoop`.
-* The python environment is the version of the 2.7.13
+* The python environment is the version of the `2.7.13`
 * The `*.scala` files and related jar files were built in the IDEA IDE, you can also use the Eclipse IDE, to rebuild this jar file.
 
 #How to use the project
