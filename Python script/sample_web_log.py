@@ -53,17 +53,19 @@ class WebLogGeneration(object):
 
     def sample_one_log(self, count = 3):
         time_str = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
-        while count > 1:
-            query_log = "{ip} - - [{localtime}] \"GET /{url} HTTP/1.1\" 200 0 \"{refer}\" \"{user_agent}\" \"-\""\
-                .format(ip=self.sample_ip(),
-                        localtime=time_str,
-                        url=self.sample_url(),
-                        user_agent = self.sample_user_agent(),
-                        refer=self.sample_refer()
-                        )
+        filename = 'weblog.txt'
+        with open(filename, 'w') as f:
+            while count > 1:
+                query_log = "{ip} - - [{localtime}] \"GET /{url} HTTP/1.1\" 200 0 \"{refer}\" \"{user_agent}\" \"-\""\
+                    .format(ip=self.sample_ip(),
+                            localtime=time_str,
+                            url=self.sample_url(),
+                            user_agent = self.sample_user_agent(),
+                            refer=self.sample_refer()
+                            )
 
-            print query_log
-            count = count - 1
+                f.write(query_log + "\n")
+                count = count - 1
 
 
 if __name__ == '__main__':
